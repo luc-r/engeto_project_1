@@ -35,9 +35,20 @@ TEXTS = [
 
 line = "-" * 40
 
-registered = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
+registered = {
+    "bob": "123", 
+    "ann": "pass123", 
+    "mike": "password123", 
+    "liz": "pass123"
+}
 
 username = input("username:")
 password = input("password:")
-
 print(line)
+
+if username in registered and registered[username] == password:
+    print(f"Welcome to the app, {username}")
+    print("We have 3 texts to be analyzed.")
+    print(line)
+else:
+    print("unregistered user, terminating the program..")
