@@ -52,3 +52,47 @@ if username in registered and registered[username] == password:
     print(line)
 else:
     print("unregistered user, terminating the program..")
+
+number = int(input("Enter a number btw. 1 and 3 to select: "))
+print(line)
+
+selected = TEXTS[number - 1]
+
+words = selected.split()
+
+word_count = len(words)
+
+word_titlecase = 0
+for word in words:
+    if word.istitle():
+        word_titlecase += 1
+
+word_uppercase = 0
+for word in words:
+    if word.isupper():
+        word_uppercase += 1
+
+word_lowercase = 0
+for word in words:
+    if word.islower():
+        word_lowercase += 1
+
+word_numeric = 0
+for word in words:
+    if word.isnumeric():
+        word_numeric += 1
+
+
+print(f"There are {word_count} words in the selected text.")
+print(f"There are {word_titlecase} titlecase words.")
+print(f"There are {word_uppercase} uppercase words.")
+print(f"There are {word_lowercase} lowercase words.")
+print(f"There are {word_numeric} numeric strings.")
+
+
+# There are 54 words in the selected text.
+# There are 11 titlecase words.
+# There are 1 uppercase words.
+# There are 38 lowercase words.
+# There are 4 numeric strings.
+# The sum of all the numbers 8540
