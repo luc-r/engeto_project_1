@@ -3,7 +3,6 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 
 author: Lucie Robošová
 email: lucka.robosova@gmail.com
-
 """
 
 
@@ -118,4 +117,33 @@ There are {word_numeric} numeric strings.
 The sum of all the numbers {word_numeric_sum}
 """.strip())
 
+print(line)
 
+
+# ----------------------------------------------------------------------
+# odstranění interpunkce a tvorba grafu četnosti délek slov
+
+words_clean = []
+
+for word in words:
+    clean = word.strip(",.!?")
+    words_clean.append(clean)
+
+words_clean_frequency = dict()
+
+for word in words_clean:
+    length = len(word)
+    if length in words_clean_frequency:
+        words_clean_frequency[length] += 1
+    else:
+        words_clean_frequency[length] = 1
+
+print("LEN|  OCCURENCES  |NR.")
+print(line)
+
+for length in sorted(words_clean_frequency):
+    count = words_clean_frequency[length]
+    stars = "*" * count
+    print(f"{length:>3}|{stars:<20}|{count}")
+
+quit()
