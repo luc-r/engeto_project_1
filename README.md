@@ -1,10 +1,12 @@
+INSTRUKCE:
+
+Do hlavičky:
 """
 projekt_1.py: první projekt do Engeto Online Python Akademie
 
 author: Lucie Robošová
 email: lucka.robosova@gmail.com
 """
-
 
 V tomto projektu bude tvým cílem vytvořit textový analyzátor 
 - program, který se bude umět prokousat libovolně dlouhým textem a zjistit o něm různé informace.

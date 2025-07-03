@@ -88,7 +88,14 @@ selected = TEXTS[text_number_int - 1]
 
 words = selected.split()
 
-word_count = len(words)
+words_clean = []
+
+for word in words:
+    clean = word.strip('.,!?;:"()[]{}')
+    if clean:
+        words_clean.append(clean)
+
+word_count = len(words_clean)
 
 word_titlecase = 0
 word_uppercase = 0
@@ -96,16 +103,15 @@ word_lowercase = 0
 word_numeric = 0
 word_numeric_sum = 0
 
-for word in words:
+for word in words_clean:
     if word.istitle():
         word_titlecase += 1
     if word.isupper():
         word_uppercase += 1
     if word.islower():
         word_lowercase += 1
-    if word.isnumeric():
-        word_numeric += 1
     if word.isdigit():
+        word_numeric += 1
         word_numeric_sum += int(word)
 
 print(f"""
@@ -121,13 +127,7 @@ print(line)
 
 
 # ----------------------------------------------------------------------
-# odstranění interpunkce a tvorba grafu četnosti délek slov
-
-words_clean = []
-
-for word in words:
-    clean = word.strip(",.!?")
-    words_clean.append(clean)
+# tvorba grafu četnosti délek slov
 
 words_clean_frequency = dict()
 
@@ -145,5 +145,3 @@ for length in sorted(words_clean_frequency):
     count = words_clean_frequency[length]
     stars = "*" * count
     print(f"{length:>3}|{stars:<20}|{count}")
-
-quit()
