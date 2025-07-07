@@ -4,8 +4,8 @@ Do hlavičky:
 """
 projekt_1.py: první projekt do Engeto Online Python Akademie
 
-author: Lucie Robošová
-email: lucka.robosova@gmail.com
+author: ...
+email: ...
 """
 
 V tomto projektu bude tvým cílem vytvořit textový analyzátor 
